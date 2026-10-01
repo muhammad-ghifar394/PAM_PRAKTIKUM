@@ -1,31 +1,87 @@
-This is a Kotlin Multiplatform project targeting Android, iOS.
+# My Profile App
 
-* [/iosApp](./iosApp/iosApp) contains an iOS application. Even if you’re sharing your UI with Compose Multiplatform,
-  you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
+Aplikasi profile sederhana menggunakan **Kotlin Multiplatform** dan **Compose Multiplatform** yang dapat dijalankan pada Android dan Desktop.
 
-* [/shared](./shared/src) is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-  - [commonMain](./shared/src/commonMain/kotlin) is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    the [iosMain](./shared/src/iosMain/kotlin) folder would be the right place for such calls.
-    Similarly, if you want to edit the Desktop (JVM) specific part, the [jvmMain](./shared/src/jvmMain/kotlin)
-    folder is the appropriate location.
+## 📱🖥️ Platform
 
-### Running the apps
+* Android
+* Desktop
 
-Use the run configurations provided by the run widget in your IDE's toolbar. You can also use these commands and options:
+## ✨ Fitur
 
-- Android app: `./gradlew :androidApp:assembleDebug`
-- iOS app: open the [/iosApp](./iosApp) directory in Xcode and run it from there.
+* Menampilkan foto profil
+* Menampilkan nama dan jurusan
+* Menampilkan deskripsi singkat
+* Menampilkan informasi personal
+* Indikator status online
+* Tombol **Edit Profile**
+* Menampilkan pesan ketika tombol Edit Profile ditekan
+* Tampilan yang dapat digunakan pada Android dan Desktop
 
-### Running tests
+## 🛠️ Teknologi
 
-Use the run button in your IDE's editor gutter, or run tests using Gradle tasks:
+* Kotlin
+* Kotlin Multiplatform
+* Compose Multiplatform
+* Material 3
+* Gradle
 
-- Android tests: `./gradlew :shared:testAndroidHostTest`
-- iOS tests: `./gradlew :shared:iosSimulatorArm64Test`
+## 📐 Layout
 
----
+Aplikasi menggunakan layout vertikal yang sama pada Android maupun Desktop.
 
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…
+```text
+Profile Header
+      ↓
+Personal Information
+      ↓
+Edit Profile
+```
+
+Pada Desktop, ukuran konten dibatasi agar tampilan tetap nyaman dan tidak terlalu melebar.
+
+## 📸 Hasil Build
+
+### Android
+
+![Android Screenshot](screenshots/android.png)
+
+### Desktop
+
+![Desktop Screenshot](screenshots/desktop.png)
+
+## 📂 Struktur Project
+
+```text
+myprofileapp/
+├── composeApp/
+│   └── src/
+│       ├── commonMain/
+│       ├── androidMain/
+│       └── desktopMain/
+│
+├── screenshots/
+│   ├── android.png
+│   └── desktop.png
+│
+├── gradle/
+├── build.gradle.kts
+├── settings.gradle.kts
+└── README.md
+```
+
+## ▶️ Menjalankan Project
+
+### Android
+
+Project dapat dijalankan menggunakan Android Studio melalui emulator atau perangkat Android.
+
+### Desktop
+
+Project dapat dijalankan menggunakan konfigurasi Desktop yang tersedia pada Android Studio.
+
+## 👨‍💻 Author
+
+**Muhammad Ghifar**
+
+Teknik Informatika
